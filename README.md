@@ -38,12 +38,12 @@ interface User {
 
 3. type আরও ফ্লেক্সিবল এবং object-এর চেয়ে বেশি রিপ্রেজেন্ট করতে পারে:
 যেমন:
--Unions
--Primitives
--Functions
--Tuples
--Intersections
--Literal types
+- Unions
+- Primitives
+- Functions
+- Tuples
+- Intersections
+- Literal types
 
 Example:
 ```typescript
