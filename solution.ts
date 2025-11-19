@@ -36,10 +36,6 @@ class Person {
     }
 }
 
-const person1 = new Person('John Doe', 30);
-const person2 = new Person('Alice', 25);
-const person3 = new Person('Hasan', 24);
-
 
 type IItem = {
     title: string;
@@ -50,13 +46,6 @@ function filterByRating(items: IItem[]): IItem[] {
 
     return items.filter(item => (item.rating >= 4 && item.rating <= 5)); // filter does not mutate the original array
 }
-
-const books = [
-    { title: 'Book A', rating: 4.5 },
-    { title: 'Book B', rating: 3.6 },
-    { title: 'Book C', rating: 5.0 },
-    { title: 'Book D', rating: 4.0 },
-];
 
 
 type TUser = {
@@ -78,14 +67,6 @@ function filterActiveUsers(users: TUser[]): TUser[] {
     return users.filter(user => (isValidUser(user) && user.isActive));
 }
 
-const users = [
-    { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
-    { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
-    { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
-    { id: 4, name: 'Hasan', email: 'hasan@example.com', isActive: true },
-];
-
-
 
 interface Book {
     title: string;
@@ -97,14 +78,6 @@ interface Book {
 function printBookDetails(book: Book): string {
     return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${book.isAvailable ? 'Yes' : 'No'}`;
 }
-
-const myBook: Book = {
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    publishedYear: 1925,
-    isAvailable: true,
-};
-
 
 
 type TArray = string[] | number[];
@@ -127,9 +100,6 @@ function getUniqueValues(arr1: TArray, arr2: TArray): TArray {
     return uniqueVals as TArray;
 }
 
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
-
 
 interface IProduct {
     name: string;
@@ -144,9 +114,3 @@ function calculateTotalPrice(items: IProduct[]): number {
         return subtotal + (itemTotal - (itemTotal * (item.discount ?? 0) / 100)); // since discount is in percentage
     }, 0);
 }
-
-const products = [
-    { name: 'Pen', price: 10, quantity: 2 },
-    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
-];
